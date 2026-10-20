@@ -22,7 +22,7 @@ def same_origin():
 def headers(r):
     r.headers['Cache-Control']='no-store';r.headers['Referrer-Policy']='no-referrer'
     r.headers['X-Content-Type-Options']='nosniff'
-    r.headers['Content-Security-Policy']="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'"
+    r.headers['Content-Security-Policy']="default-src 'none'; connect-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'"
     return r
 @app.get('/health')
 def health():return jsonify(ok=True)
