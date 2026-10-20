@@ -60,3 +60,4 @@ def start(service_code):
     # Target URL is trusted DB configuration, never caller-controlled.
     target=svc['return_url']+('?'+urlencode({'ticket':ticket}) )
     return redirect(target,302)
+
